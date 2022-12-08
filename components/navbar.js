@@ -9,8 +9,8 @@ export default function Navbar() {
 
   // Replace javascript:void(0) path with your path
   const navigation = [
-    { title: "Indoor Products", path: "javascript:void(0)" },
-    { title: "Outdoor Products", path: "javascript:void(0)" },
+    { title: "Services", path: "/ourservices" },
+    { title: "Products", path: "/products" },
     { title: "Partners", path: "javascript:void(0)" },
     { title: "About Us", path: "/about" },
   ];
@@ -82,15 +82,22 @@ export default function Navbar() {
                 </li>
               );
             })}
-            <li className="inline-block md:hidden">
-              <div>
-                <a
-                  href="javascript:void(0)"
-                  className="py-3 px-4 text-white bg-EN-secondary hover:bg-EN-darkblue rounded-md shadow"
-                >
-                  Call us: (516) 655 3484
-                </a>
-              </div>
+            <li className=" md:hidden">
+              <a
+                href="javascript:void(0)"
+                className="flex py-3 px-4 text-black bg-EN-primary justify-center hover:bg-EN-darkblue rounded-md shadow"
+              >
+                <div className="flex">
+                  <Image
+                    src="/phone-solid.svg"
+                    alt="call now"
+                    width={20}
+                    height={20}
+                    className="mr-2"
+                  />{" "}
+                  &#40;516&#41; 655&#45;3484
+                </div>
+              </a>
             </li>
           </ul>
         </div>

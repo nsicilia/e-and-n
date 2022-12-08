@@ -55,14 +55,14 @@ export const AboutUs = () => {
             </h2>
             <p className="text-base text-gray-700 md:text-lg">
               E&N Contracting Group, LLC, is a Long Island based family-owned
-              business.We are currently providing our commercial customers with
-              brand newL ED lighting fixtures, through local rebate and
+              business. We are currently providing our commercial customers with
+              brand new LED lighting fixtures, through local rebate and
               incentive programs.
             </p>
             <p className="text-base text-gray-700 md:text-lg">
-              Our current mission is to reduce at least 50% of your lighting
-              cost, by switching out fluorescent, halogen, or incandescent
-              fixtures to a more efficient LED one.
+              Our mission is to reduce at least 50% of your lighting cost, by
+              switching out fluorescent, halogen, or incandescent fixtures to a
+              more efficient LED lighting.
             </p>
             <p className="text-base text-gray-700 md:text-lg">
               We have an excellent administration, sales and installation team
@@ -71,7 +71,7 @@ export const AboutUs = () => {
             </p>
           </div>
           <div>
-            <Link
+            {/* <Link
               href="/"
               aria-label=""
               className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
@@ -84,7 +84,7 @@ export const AboutUs = () => {
               >
                 <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
               </svg>
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="flex items-center justify-center -mx-4 lg:pl-8">

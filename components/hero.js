@@ -24,9 +24,18 @@ export const Hero = () => {
             <Link
               href="/"
               aria-label=""
-              className="py-3 px-4 text-white bg-EN-secondary hover:bg-EN-darkblue rounded-md shadow rounded font-semibold transition-colors duration-200 hover:text-deep-purple-accent-700"
+              className="py-3 px-4 text-black bg-EN-primary hover:bg-EN-darkblue hover:text-white rounded-md shadow rounded font-semibold transition-colors duration-200 hover:text-deep-purple-accent-700"
             >
-              (516) 655 3484
+              <span className="flex">
+                <Image
+                  src="/phone-solid.svg"
+                  alt="call now"
+                  width={20}
+                  height={20}
+                  className="mr-2"
+                />{" "}
+                &#40;516&#41; 655&#45;3484
+              </span>
             </Link>
           </div>
         </div>
