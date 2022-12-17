@@ -5,38 +5,44 @@ export const TopServices = () => {
   //List of top products
   const topProducts = [
     {
-      image: "/products/smd-tube-light.jpeg",
-      title: "LED Premium Flat Panel 2'X4'",
+      image: "/products/2x4panel.jpg",
+      title: "LED Premium Flat Panel 2'X4' ",
+      slug: "led-premium-flat-panel-2x4",
       description:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
     },
     {
       image: "/products/panel-light.webp",
-      title: "LED Panel Lights",
+      title: "LED Premium Flat Panel 2'X2' ",
+      slug: "led-premium-flat-panel-2x2",
       description:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
     },
     {
       image: "/products/smd-tube-light.jpeg",
       title: "Galaxies Orion",
+      slug: "galaxies-orion",
       description:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
     },
     {
       image: "/products/smd-tube-light.jpeg",
       title: "Galaxies Orion",
+      slug: "galaxies-orion",
       description:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
     },
     {
       image: "/products/smd-tube-light.jpeg",
       title: "Galaxies Orion",
+      slug: "galaxies-orion",
       description:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
     },
     {
       image: "/products/smd-tube-light.jpeg",
       title: "Galaxies Orion",
+      slug: "galaxies-orion",
       description:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
     },
@@ -83,17 +89,19 @@ export const TopServices = () => {
         {topProducts.map((item, id) => {
           return (
             <div key={id}>
-              <Image
-                className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80"
-                src={item.image}
-                alt=""
-                height={750}
-                width={1260}
-              />
-              <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
-                {item.title}
-              </p>
-              <p className="text-gray-700">{item.description}</p>
+              <Link href={`/products/${item.slug}`}>
+                <Image
+                  className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80"
+                  src={item.image}
+                  alt=""
+                  height={750}
+                  width={1260}
+                />
+                <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
+                  {item.title}
+                </p>
+                <p className="text-gray-700">{item.description}</p>
+              </Link>
             </div>
           );
         })}
