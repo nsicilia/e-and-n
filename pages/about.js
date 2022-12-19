@@ -1,11 +1,12 @@
-import Head from "next/head";
 import Image from "next/image";
 import { AboutUs } from "../components/aboutus";
-import Navbar from "../components/navbar";
 import { Statistics } from "../components/stats";
 import { Top } from "../components/top";
+import { client, urlFor } from "../sanity";
 
-export default function About() {
+export default function About({ about }) {
+  console.log(about);
+
   return (
     <div>
       <Top />
@@ -17,3 +18,21 @@ export default function About() {
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  const query = ` *[_type == "about"] {
+    _id,
+    title,
+    description,
+    image,
+    "slug": slug.current,
+    }`;
+
+  const about = await client.fetch(query);
+
+  return {
+    props: {
+      about,
+    },
+  };
+};
