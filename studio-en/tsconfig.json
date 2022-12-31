@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["**/*.ts", "**/*.tsx", "sanity.cli.js", "sanity.config.js", "schemas/services.js", "schemas/review.js", "schemas/product.js", "schemas/page.js", "schemas/index.js", "schemas/category.js", "schemas/blockContent.js", "schemas/author.js"],
+  "include": ["**/*.ts", "**/*.tsx", "sanity.cli.js", "sanity.config.js", "schemas/services.js", "schemas/review.js", "schemas/product.js", "schemas/page.js", "schemas/index.js", "schemas/category.js", "schemas/blockContent.js", "schemas/author.js", "schemas/singletons/siteSettings.js", "schemas/singletons/home.js", "schemas/singletons/about.js"],
   "exclude": ["node_modules"]
 }
