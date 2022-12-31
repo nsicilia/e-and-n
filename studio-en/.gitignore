@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 
-studio-en
+studio-en/node_modules
 
 # Compiled Sanity Studio
 /dist
