@@ -43,9 +43,9 @@ export const Hero = ({ hero }) => {
           <div className="flex flex-col items-center md:flex-wrap md:items-start">
             <p>Call for a FREE Estimate: </p>
             <br></br>
-            <Link
-              href="/"
-              aria-label=""
+            <a
+              href="tel:516-655-3484"
+              aria-label="phone"
               className="py-3 px-4 text-black bg-EN-primary hover:bg-EN-darkblue hover:text-white rounded-md shadow rounded font-semibold transition-colors duration-200 hover:text-deep-purple-accent-700"
             >
               <span className="flex">
@@ -58,19 +58,22 @@ export const Hero = ({ hero }) => {
                 />{" "}
                 &#40;516&#41; 655&#45;3484
               </span>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
       <div className="inset-y-0 right-0 w-full max-w-xl px-4 mx-auto lg:pl-8 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">
-        <Image
-          className="object-cover w-full h-56 rounded shadow-lg md:rounded-none lg:rounded-l lg:shadow-none sm:h-96 lg:h-full"
-          src={urlFor(hero.mainImage).url()}
-          alt="We install high qualaity lights"
-          priority
-          height={656}
-          width={960}
-        />
+        <div className="relative h-60 w-full md:h-full">
+          <Image
+            className="object-cover w-full h-56 rounded shadow-lg md:rounded-none lg:rounded-l lg:shadow-none sm:h-96 lg:h-full"
+            src={urlFor(hero.mainImage).url()}
+            alt="We install high qualaity lights"
+            priority
+            // height={656}
+            // width={960}
+            fill
+          />
+        </div>
       </div>
     </div>
   );

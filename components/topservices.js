@@ -33,9 +33,8 @@ export const TopServices = ({ products }) => {
           </h2>
         </div>
         <p className="w-full text-gray-700 lg:text-sm lg:max-w-md">
-          &quot;Sed ut perspiciatis unde omnis iste natus error sit iste
-          voluptatem accusantium doloremque rem aperiam, ipsa eaque quae. Sed ut
-          perspiciatis unde omnis iste.&quot;
+          &quot;If you have any questions about our products, please contact us
+          for more information.&quot;
         </p>
       </div>
 

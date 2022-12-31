@@ -102,7 +102,7 @@ export default function Navbar() {
         </div>
         <div className="hidden md:inline-block">
           <a
-            href="javascript:void(0)"
+            href="tel:516-655-3484"
             className=" text-slate-800 font-bold hover:text-EN-darkblue"
           >
             Call us: (516) 655-3484
