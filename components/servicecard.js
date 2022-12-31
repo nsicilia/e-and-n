@@ -1,23 +1,43 @@
 import Image from "next/image";
+import PortableText from "react-portable-text";
 
-export const ServiceCard = () => {
-  const title = "The quick, brown fox";
-
+export const ServiceCard = ({ item, image }) => {
   return (
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="grid gap-5 row-gap-10 lg:grid-cols-2">
         <div className="flex flex-col justify-center">
           <div className="max-w-xl mb-6">
             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-              {title}
+              {item.title}
             </h2>
             <p className="text-base text-gray-700 md:text-lg">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae. explicabo.
+              <PortableText
+                dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                content={item.body}
+                serializers={{
+                  h1: (props) => (
+                    <h1 className="text-2xl font-bold">{props.children}</h1>
+                  ),
+                  h2: (props) => (
+                    <h2 className="text-xl font-bold">{props.children}</h2>
+                  ),
+                  h3: (props) => (
+                    <h3 className="text-lg font-bold">{props.children}</h3>
+                  ),
+                  li: (props) => (
+                    <li className="leading-relaxed mb-4">{props.children}</li>
+                  ),
+                  link: (href, children) => (
+                    <a href={href} className="text-EN-darkblue">
+                      {children}
+                    </a>
+                  ),
+                }}
+              />
             </p>
           </div>
-          <p className="mb-4 text-sm font-bold tracking-widest uppercase">
+          {/* <p className="mb-4 text-sm font-bold tracking-widest uppercase">
             Features
           </p>
           <div className="grid space-y-3 sm:gap-2 sm:grid-cols-2 sm:space-y-0">
@@ -38,7 +58,7 @@ export const ServiceCard = () => {
                     />
                   </svg>
                 </span>
-                A slice of heaven
+                {item.point1 && "item.point1"}
               </li>
               <li className="flex">
                 <span className="mr-1">
@@ -56,7 +76,7 @@ export const ServiceCard = () => {
                     />
                   </svg>
                 </span>
-                Disrupt inspire
+                {item.point2 && "item.point2"}
               </li>
               <li className="flex">
                 <span className="mr-1">
@@ -74,7 +94,7 @@ export const ServiceCard = () => {
                     />
                   </svg>
                 </span>
-                Preliminary thinking
+                {item.point3 && "item.point3"}
               </li>
             </ul>
             <ul className="space-y-3">
@@ -94,7 +114,7 @@ export const ServiceCard = () => {
                     />
                   </svg>
                 </span>
-                Flipboard curmudgeon
+                {item.point4 && item.point4}
               </li>
               <li className="flex">
                 <span className="mr-1">
@@ -112,7 +132,7 @@ export const ServiceCard = () => {
                     />
                   </svg>
                 </span>
-                Storage shed
+                {item.point5 && item.point5}
               </li>
               <li className="flex">
                 <span className="mr-1">
@@ -130,15 +150,15 @@ export const ServiceCard = () => {
                     />
                   </svg>
                 </span>
-                Satoshi Nakamoto
+                {item.point6 && item.point6}
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
         <div>
-          <img
+          <Image
             className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
-            src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+            src={image}
             alt=""
             width={598}
             height={384}

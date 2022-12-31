@@ -1,46 +1,51 @@
 import Image from "next/image";
+import { client, urlFor } from "../sanity";
 
-export const Reviews = () => {
-  const reviewCopy = [{}, {}, {}];
+export const Reviews = ({ reviews }) => {
+  console.log("reviews");
+  console.log(reviews);
+  console.log(urlFor(reviews[0].mainImage).url());
 
   return (
     <>
-      <section class="bg-white">
-        <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-          <div class="mx-auto max-w-xl text-center">
-            <h2 class="text-4xl font-bold tracking-tight sm:text-5xl">
+      <section className="bg-white">
+        <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+          <div className="mx-auto max-w-xl text-center">
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
               Read trusted reviews from our customers
             </h2>
           </div>
 
-          <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-16 lg:grid-cols-3">
-            {reviewCopy.map((item, id) => {
+          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-16 lg:grid-cols-3">
+            {reviews.map((item, id) => {
               return (
                 <div key={id}>
                   <Image
-                    alt="Company logo"
-                    src="/vercel.svg"
-                    class="mx-auto h-24 w-24 rounded-full object-cover shadow-xl"
-                    width={90}
-                    height={90}
+                    className="mx-auto object-cover w-full h-24 rounded-full shadow-lg sm:h-24 w-24"
+                    src={urlFor(item.mainImage).url()}
+                    alt=""
+                    width={598}
+                    height={384}
                   />
 
-                  <blockquote class="-mt-6 flex flex-col justify-between rounded-lg p-12 text-center shadow-xl">
-                    <p class="text-lg font-bold text-gray-700">Sophie Lennon</p>
-                    <p class="mt-1 text-xs font-medium text-gray-500">
-                      Company
+                  <blockquote className="-mt-6 flex flex-col justify-between rounded-lg p-12 text-center shadow-xl">
+                    <p className="text-lg font-bold text-gray-700">
+                      {item.name}
                     </p>
-                    <p class="mt-4 text-sm text-gray-500">
+                    <p className="mt-1 text-xs font-medium text-gray-500">
+                      {item.company}
+                    </p>
+                    <p className="mt-4 text-sm text-gray-500">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Deserunt voluptatem alias ut provident sapiente
                       repellendus.
                     </p>
 
                     {/* Stars */}
-                    <div class="mt-8 flex justify-center gap-0.5 text-EN-secondary">
+                    <div className="mt-8 flex justify-center gap-0.5 text-EN-secondary">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6"
+                        className="h-6 w-6"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -48,7 +53,7 @@ export const Reviews = () => {
                       </svg>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6"
+                        className="h-6 w-6"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -56,7 +61,7 @@ export const Reviews = () => {
                       </svg>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6"
+                        className="h-6 w-6"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -64,7 +69,7 @@ export const Reviews = () => {
                       </svg>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6"
+                        className="h-6 w-6"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -72,7 +77,7 @@ export const Reviews = () => {
                       </svg>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6"
+                        className="h-6 w-6"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >

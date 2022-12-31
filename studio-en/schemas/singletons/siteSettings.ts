@@ -1,15 +1,18 @@
+import {CogIcon} from '@sanity/icons'
+
 export default {
-  name: 'siteSettings',
+  name: 'siteSettingstest',
   title: 'Site Settings',
   type: 'document',
+  icon: CogIcon,
   fields: [
     {
-      name: 'title',
+      name: 'title1',
       title: 'Site Title',
       type: 'string',
     },
     {
-      name: 'description',
+      name: 'description1',
       title: 'Site Description',
       type: 'text',
     },

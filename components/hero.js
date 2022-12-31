@@ -1,7 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import PortableText from "react-portable-text";
+import { urlFor } from "../sanity";
 
-export const Hero = () => {
+export const Hero = ({ hero }) => {
+  console.log("hero");
+  console.log(hero);
   return (
     <div className="relative flex flex-col py-16 lg:pt-0 lg:flex-col lg:pb-0">
       <div className="flex flex-col items-start w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-xl">
@@ -9,13 +13,33 @@ export const Hero = () => {
           <div className="max-w-xl mb-6">
             <div></div>
             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-              The highest quality Commercial & Industrial Lighting
+              {hero.title && hero.title}
             </h2>
-            <p className="text-base text-gray-700 md:text-lg">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae. explicabo.
-            </p>
+
+            <PortableText
+              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+              content={hero.overview}
+              serializers={{
+                h1: (props) => (
+                  <h1 className="text-2xl font-bold">{props.children}</h1>
+                ),
+                h2: (props) => (
+                  <h2 className="text-xl font-bold">{props.children}</h2>
+                ),
+                h3: (props) => (
+                  <h3 className="text-lg font-bold">{props.children}</h3>
+                ),
+                li: (props) => (
+                  <li className="leading-relaxed mb-4">{props.children}</li>
+                ),
+                link: (href, children) => (
+                  <a href={href} className="text-EN-darkblue">
+                    {children}
+                  </a>
+                ),
+              }}
+            />
           </div>
 
           <div className="flex flex-col items-center md:flex-wrap md:items-start">
@@ -43,7 +67,7 @@ export const Hero = () => {
       <div className="inset-y-0 right-0 w-full max-w-xl px-4 mx-auto lg:pl-8 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">
         <Image
           className="object-cover w-full h-56 rounded shadow-lg md:rounded-none lg:rounded-l lg:shadow-none sm:h-96 lg:h-full"
-          src="/lights_in_bay.jpg"
+          src={urlFor(hero.mainImage).url()}
           alt="We install high qualaity lights"
           priority
           height={656}

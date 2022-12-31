@@ -1,7 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import { client, urlFor } from ".././sanity";
 
-export const TopServices = () => {
+export const TopServices = ({ products }) => {
+  console.log("products");
+  console.log(products);
   //List of top products
   const topProducts = [
     {
@@ -86,21 +89,22 @@ export const TopServices = () => {
 
       {/* The Grid of Products */}
       <div className="grid gap-8 row-gap-5 mb-8 lg:grid-cols-3 lg:row-gap-8">
-        {topProducts.map((item, id) => {
+        {products.slice(0, 5).map((item, id) => {
           return (
             <div key={id}>
-              <Link href={`/products/${item.slug}`}>
-                <Image
-                  className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80"
-                  src={item.image}
-                  alt=""
-                  height={750}
-                  width={1260}
-                />
-                <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
-                  {item.title}
-                </p>
-                <p className="text-gray-700">{item.description}</p>
+              <Link href={`/products/${item.slug.current}`}>
+                <div>
+                  <Image
+                    className="object-cover w-full h-56 mb-6 rounded border shadow-lg md:h-64 xl:h-80 hover:shadow-xl"
+                    src={urlFor(item.mainImage).url()}
+                    alt=""
+                    height={750}
+                    width={1260}
+                  />
+                  <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
+                    {item.title}
+                  </p>
+                </div>
               </Link>
             </div>
           );

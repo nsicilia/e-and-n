@@ -5,8 +5,12 @@ import { Hero } from "../components/hero";
 import Navbar from "../components/navbar";
 import { Reviews } from "../components/reviews";
 import { TopServices } from "../components/topservices";
+import { client, urlFor } from "../sanity";
 
-export default function Home() {
+export default function Home({ data, reviews, products }) {
+  console.log("first data");
+  console.log(data);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -18,9 +22,9 @@ export default function Home() {
       <Navbar />
 
       <main className={styles.main}>
-        <Hero />
-        <TopServices />
-        <Reviews />
+        <Hero hero={data} />
+        <TopServices products={products} />
+        <Reviews reviews={reviews} />
       </main>
 
       <footer className={styles.footer}>
@@ -45,3 +49,41 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  const mainquery = `*[_type == "home"][1] {
+    _id,
+    title,
+    mainImage,
+    overview,
+}`;
+
+  const reviewquery = `*[_type == "review"] {
+    _id,
+    name,
+    company,
+    mainImage,
+    body
+    }`;
+
+  const productquery = ` *[_type == "product"] {
+    _id,
+    title,
+    mainImage,
+    slug {
+      current
+    }
+    }`;
+
+  const data = await client.fetch(mainquery);
+  const reviews = await client.fetch(reviewquery);
+  const products = await client.fetch(productquery);
+
+  return {
+    props: {
+      data,
+      reviews,
+      products,
+    },
+  };
+};

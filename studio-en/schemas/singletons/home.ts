@@ -18,13 +18,6 @@ export default defineType({
     }),
 
     defineField({
-      name: 'pagetype',
-      description: 'This field is the type of page.',
-      title: 'Page Type',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
       name: 'overview',
       description:
         'Used both for the <meta> description tag for SEO, and the personal website subheader.',
@@ -66,6 +59,7 @@ export default defineType({
       ],
       validation: (rule) => rule.max(155).required(),
     }),
+
     defineField({
       name: 'mainImage',
       title: 'Main image',
@@ -74,33 +68,17 @@ export default defineType({
         hotspot: true,
       },
     }),
-    defineField({
-      name: 'secondImage',
-      title: 'Second image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name: 'thirdImage',
-      title: 'Third image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
+    // defineField({
+    //   name: 'homereviews',
+    //   title: 'Reviews',
+    //   type: 'array',
+    //   of: [{type: 'reference', to: [{type: 'review'}]}],
+    // }),
   ],
   preview: {
     select: {
       title: 'title',
       subtitle: 'pagetype',
     },
-    // prepare({title}) {
-    //   return {
-    //     subtitle: 'Home',
-    //     title,
-    //   }
-    // },
   },
 })

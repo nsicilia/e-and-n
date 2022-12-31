@@ -4,11 +4,9 @@ import Navbar from "../../components/navbar";
 import Head from "next/head";
 import { ServicesHeader } from "../../components/servicehero";
 import { ServiceCard } from "../../components/servicecard";
+import { client, urlFor } from "../../sanity";
 
-export default function About() {
-  //list of services
-  const serviceOfferings = [{ one: "two" }, { one: "two" }, { one: "two" }];
-
+export default function About({ services }) {
   return (
     <div>
       <Head>
@@ -22,10 +20,13 @@ export default function About() {
       <main>
         <ServicesHeader />
         <div>
-          {serviceOfferings.map((item, id) => {
+          {services.map((service, id) => {
             return (
               <div key={id}>
-                <ServiceCard />
+                <ServiceCard
+                  item={service}
+                  image={urlFor(service.mainImage).url()}
+                />
               </div>
             );
           })}
@@ -34,3 +35,26 @@ export default function About() {
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  const query = `*[_type == "service"] {
+    _id,
+    title,
+    body,
+    mainImage,
+    point1,
+    point3,
+    point3,
+    point4,
+    point5,
+    point6,
+    }`;
+
+  const services = await client.fetch(query);
+
+  return {
+    props: {
+      services,
+    },
+  };
+};

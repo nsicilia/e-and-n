@@ -1,27 +1,17 @@
 import {defineField, defineType} from 'sanity'
-import {BasketIcon} from '@sanity/icons'
-
+import {BulbOutlineIcon} from '@sanity/icons'
 
 export default defineType({
-  name: 'product',
-  title: 'Products',
+  name: 'service',
+  title: 'Services',
   type: 'document',
-  icon: BasketIcon,
-  
+  icon: BulbOutlineIcon,
+
   fields: [
     defineField({
       name: 'title',
       title: 'Product Name',
       type: 'string',
-    }),
-    defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
     }),
     defineField({
       name: 'mainImage',
@@ -32,28 +22,39 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-    }),
-    defineField({
       name: 'body',
       title: 'Description',
       type: 'blockContent',
     }),
+    //Bullet points for services
     defineField({
-      name: 'colortemperature',
-      title: 'Color Temperature',
+      name: 'point1',
+      title: 'Point 1',
       type: 'string',
     }),
     defineField({
-      name: 'sizes',
-      title: 'Sizes',
+      name: 'point2',
+      title: 'Point 2',
       type: 'string',
     }),
     defineField({
-      name: 'greatfor',
-      title: 'Great For:',
+      name: 'point3',
+      title: 'Point 3',
+      type: 'string',
+    }),
+    defineField({
+      name: 'point4',
+      title: 'Point 4',
+      type: 'string',
+    }),
+    defineField({
+      name: 'point5',
+      title: 'Point 5',
+      type: 'string',
+    }),
+    defineField({
+      name: 'point6',
+      title: 'Point 6',
       type: 'string',
     }),
   ],
