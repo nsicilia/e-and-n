@@ -46,16 +46,14 @@ export default {
       title: 'Stat 1',
       type: 'string',
       description: 'Some number',
-      validation: (Rule: any) =>
-        Rule.max(120).warning(`A title shouldn't be more than 120 characters.`),
+      validation: (Rule) => Rule.max(120).warning(`A title shouldn't be more than 120 characters.`),
     },
     {
       name: 'stat1title',
       title: 'Stat 1 title',
       type: 'string',
       description: 'What the number represents',
-      validation: (Rule: any) =>
-        Rule.max(120).warning(`A title shouldn't be more than 120 characters.`),
+      validation: (Rule) => Rule.max(120).warning(`A title shouldn't be more than 120 characters.`),
     },
     {
       name: 'stat1description',
@@ -68,16 +66,14 @@ export default {
       title: 'Stat 2',
       type: 'string',
       description: 'Some number',
-      validation: (Rule: any) =>
-        Rule.max(120).warning(`A title shouldn't be more than 120 characters.`),
+      validation: (Rule) => Rule.max(120).warning(`A title shouldn't be more than 120 characters.`),
     },
     {
       name: 'stat2title',
       title: 'Stat 2 title',
       type: 'string',
       description: 'What the number represents',
-      validation: (Rule: any) =>
-        Rule.max(120).warning(`A title shouldn't be more than 120 characters.`),
+      validation: (Rule) => Rule.max(120).warning(`A title shouldn't be more than 120 characters.`),
     },
     {
       name: 'stat2description',
@@ -90,16 +86,14 @@ export default {
       title: 'Stat 3',
       type: 'string',
       description: 'Some number',
-      validation: (Rule: any) =>
-        Rule.max(120).warning(`A title shouldn't be more than 120 characters.`),
+      validation: (Rule) => Rule.max(120).warning(`A title shouldn't be more than 120 characters.`),
     },
     {
       name: 'stat3title',
       title: 'Stat 3 title',
       type: 'string',
       description: 'What the number represents',
-      validation: (Rule: any) =>
-        Rule.max(120).warning(`A title shouldn't be more than 120 characters.`),
+      validation: (Rule) => Rule.max(120).warning(`A title shouldn't be more than 120 characters.`),
     },
     {
       name: 'stat3description',

@@ -17,33 +17,35 @@ const ProductSlug = ({ item }) => {
 
 export default ProductSlug;
 
-export const getStaticPaths = async () => {
-  const query = `*[_type == "product"] {
-    _id,
-    title,
-    body,
-    mainImage,
-    colortemperature,
-    sizes,
-    greatfor,
-    "slug": slug.current,
-}`;
+// export const getStaticPaths = async () => {
+//   const query = `*[_type == "product"] {
+//     _id,
+//     title,
+//     body,
+//     mainImage,
+//     colortemperature,
+//     sizes,
+//     greatfor,
+//     "slug": slug.current,
+// }`;
 
-  const products = await client.fetch(query);
+//   const products = await client.fetch(query);
 
-  const paths = products.map((product) => ({
-    params: {
-      slug: product.slug,
-    },
-  }));
+//   const paths = products.map((product) => ({
+//     params: {
+//       slug: product.slug,
+//     },
+//   }));
 
-  return {
-    paths,
-    fallback: true,
-  };
-};
+//   return {
+//     paths,
+//     fallback: true,
+//   };
+// };
 
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
+  const { slug = "" } = params;
+
   const query = `
   *[_type == "product" && slug.current == $slug][0] {
     _id,
@@ -56,7 +58,7 @@ export const getStaticProps = async ({ params }) => {
     "slug": slug.current,
 }`;
 
-  const product = await client.fetch(query, { slug: params?.slug });
+  const product = await client.fetch(query, { slug: slug });
 
   return {
     props: {
