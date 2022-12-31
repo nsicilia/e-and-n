@@ -38,11 +38,6 @@ export const getStaticPaths = async () => {
   }));
 
   return {
-    // paths: [
-    //   {
-    //     params: { slug: "led-254-series-troffer" },
-    //   },
-    // ],
     paths,
     fallback: true,
   };
