@@ -83,7 +83,7 @@ export default function Navbar() {
             })}
             <li className=" md:hidden">
               <a
-                href="javascript:void(0)"
+                href="tel:516-655-3484"
                 className="flex py-3 px-4 text-black bg-EN-primary justify-center hover:bg-EN-darkblue rounded-md shadow"
               >
                 <div className="flex">

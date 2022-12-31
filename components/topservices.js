@@ -44,18 +44,19 @@ export const TopServices = ({ products }) => {
           return (
             <div key={id}>
               <Link href={`/products/${item.slug.current}`}>
-                <div>
+                <div className="relative h-80 w-full">
                   <Image
                     className="object-cover w-full h-56 mb-6 rounded border shadow-lg md:h-64 xl:h-80 hover:shadow-xl"
                     src={urlFor(item.mainImage).url()}
                     alt=""
-                    height={750}
-                    width={1260}
+                    // height={750}
+                    // width={1260}
+                    fill
                   />
-                  <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
-                    {item.title}
-                  </p>
                 </div>
+                <p className="mt-3 mb-2 text-xl font-bold leading-none sm:text-2xl">
+                  {item.title}
+                </p>
               </Link>
             </div>
           );
