@@ -3,54 +3,6 @@ import Image from "next/image";
 import { client, urlFor } from ".././sanity";
 
 export const TopServices = ({ products }) => {
-  console.log("products");
-  console.log(products);
-  //List of top products
-  const topProducts = [
-    {
-      image: "/products/2x4panel.jpg",
-      title: "LED Premium Flat Panel 2'X4' ",
-      slug: "led-premium-flat-panel-2x4",
-      description:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
-    },
-    {
-      image: "/products/panel-light.webp",
-      title: "LED Premium Flat Panel 2'X2' ",
-      slug: "led-premium-flat-panel-2x2",
-      description:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
-    },
-    {
-      image: "/products/smd-tube-light.jpeg",
-      title: "Galaxies Orion",
-      slug: "galaxies-orion",
-      description:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
-    },
-    {
-      image: "/products/smd-tube-light.jpeg",
-      title: "Galaxies Orion",
-      slug: "galaxies-orion",
-      description:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
-    },
-    {
-      image: "/products/smd-tube-light.jpeg",
-      title: "Galaxies Orion",
-      slug: "galaxies-orion",
-      description:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
-    },
-    {
-      image: "/products/smd-tube-light.jpeg",
-      title: "Galaxies Orion",
-      slug: "galaxies-orion",
-      description:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
-    },
-  ];
-
   return (
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="flex flex-col w-full mb-6 lg:justify-between lg:flex-row md:mb-8">

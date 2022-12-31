@@ -4,8 +4,6 @@ import PortableText from "react-portable-text";
 import { urlFor } from "../sanity";
 
 export const Hero = ({ hero }) => {
-  console.log("hero");
-  console.log(hero);
   return (
     <div className="relative flex flex-col py-16 lg:pt-0 lg:flex-col lg:pb-0">
       <div className="flex flex-col items-start w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-xl">

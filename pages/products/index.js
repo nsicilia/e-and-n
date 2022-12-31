@@ -5,8 +5,6 @@ import { Top } from "../../components/top";
 import { client, urlFor } from "../../sanity";
 
 export default function Products({ products }) {
-  console.log(products);
-
   return (
     <div>
       <Top />

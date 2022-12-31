@@ -8,9 +8,6 @@ import { TopServices } from "../components/topservices";
 import { client, urlFor } from "../sanity";
 
 export default function Home({ data, reviews, products }) {
-  console.log("first data");
-  console.log(data);
-
   return (
     <div className={styles.container}>
       <Head>

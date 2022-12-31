@@ -2,10 +2,6 @@ import Image from "next/image";
 import { client, urlFor } from "../sanity";
 
 export const Reviews = ({ reviews }) => {
-  console.log("reviews");
-  console.log(reviews);
-  console.log(urlFor(reviews[0].mainImage).url());
-
   return (
     <>
       <section className="bg-white">

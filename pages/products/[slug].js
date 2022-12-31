@@ -4,9 +4,6 @@ import ProductHero from "../../components/producthero";
 import { client, urlFor } from "../../sanity";
 
 const ProductSlug = ({ item }) => {
-  console.log("item");
-  console.log(item);
-
   return (
     <div>
       <Top />

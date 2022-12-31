@@ -5,8 +5,6 @@ import { Top } from "../components/top";
 import { client, urlFor } from "../sanity";
 
 export default function About({ about }) {
-  console.log(about);
-
   return (
     <div>
       <Top />
