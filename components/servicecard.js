@@ -10,32 +10,31 @@ export const ServiceCard = ({ item, image }) => {
             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
               {item.title}
             </h2>
-            <p className="text-base text-gray-700 md:text-lg">
-              <PortableText
-                dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-                content={item.body}
-                serializers={{
-                  h1: (props) => (
-                    <h1 className="text-2xl font-bold">{props.children}</h1>
-                  ),
-                  h2: (props) => (
-                    <h2 className="text-xl font-bold">{props.children}</h2>
-                  ),
-                  h3: (props) => (
-                    <h3 className="text-lg font-bold">{props.children}</h3>
-                  ),
-                  li: (props) => (
-                    <li className="leading-relaxed mb-4">{props.children}</li>
-                  ),
-                  link: (href, children) => (
-                    <a href={href} className="text-EN-darkblue">
-                      {children}
-                    </a>
-                  ),
-                }}
-              />
-            </p>
+
+            <PortableText
+              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+              content={item.body}
+              serializers={{
+                h1: (props) => (
+                  <h1 className="text-2xl font-bold">{props.children}</h1>
+                ),
+                h2: (props) => (
+                  <h2 className="text-xl font-bold">{props.children}</h2>
+                ),
+                h3: (props) => (
+                  <h3 className="text-lg font-bold">{props.children}</h3>
+                ),
+                li: (props) => (
+                  <li className="leading-relaxed mb-4">{props.children}</li>
+                ),
+                link: (href, children) => (
+                  <a href={href} className="text-EN-darkblue">
+                    {children}
+                  </a>
+                ),
+              }}
+            />
           </div>
           {/* <p className="mb-4 text-sm font-bold tracking-widest uppercase">
             Features
