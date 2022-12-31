@@ -82,5 +82,7 @@ export const getStaticProps = async () => {
       reviews,
       products,
     },
+
+    revalidate: 10,
   };
 };
