@@ -8,7 +8,7 @@ export const TopServices = ({ products }) => {
       <div className="flex flex-col w-full mb-6 lg:justify-between lg:flex-row md:mb-8">
         <div className="flex items-center mb-5 md:mb-6 group lg:max-w-xl">
           {/* The Lightning bolt icon */}
-          <div aria-label="Item" className="mr-3">
+          <div aria-label="Lighting Products" className="mr-3">
             <div className="flex items-center justify-center w-16 h-16 rounded-full bg-EN-secondary">
               <svg
                 className="w-12 h-12 text-deep-purple-accent-400"
