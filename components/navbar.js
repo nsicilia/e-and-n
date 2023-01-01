@@ -20,7 +20,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <Link href="/">
             <Image
-              src="/EandNlogo.svg"
+              src="/ENlogo.png"
               width={360}
               height={80}
               alt="Float UI logo"
