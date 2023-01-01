@@ -23,7 +23,7 @@ export default function Navbar() {
           </Link>
           <div className="md:hidden">
             <button
-              area-aria-label="toggle menu"
+              area-label="Open Menu"
               className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
               onClick={() => setState(!state)}
             >
