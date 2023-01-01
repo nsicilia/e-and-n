@@ -43,7 +43,10 @@ export const TopServices = ({ products }) => {
         {products.slice(0, 5).map((item, id) => {
           return (
             <div key={id}>
-              <Link href={`/products/${item.slug.current}`}>
+              <Link
+                href={`/products/${item.slug.current}`}
+                aria-label={item.title}
+              >
                 <div className="relative h-80 w-full">
                   <Image
                     className="object-cover w-full h-56 mb-6 rounded border shadow-lg md:h-64 xl:h-80 hover:shadow-xl"

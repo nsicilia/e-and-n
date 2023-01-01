@@ -18,13 +18,13 @@ export const ContactUs = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          //console.log(result.text);
           document.getElementById("contact-form").reset();
           setSent(true);
-          console.log("sent status", sent);
+          //console.log("sent status", sent);
         },
         (error) => {
-          console.log(error.text);
+          //console.log(error.text);
         }
       );
   };
