@@ -31,7 +31,7 @@ export const Reviews = ({ reviews }) => {
                     <p className="mt-1 text-xs font-medium text-gray-500">
                       {item.company}
                     </p>
-                    <p className="mt-4 text-sm text-gray-500">{item.review}</p>
+                    <p className="mt-4 text-sm text-gray-500">{item.body}</p>
 
                     {/* Stars */}
                     <div className="mt-8 flex justify-center gap-0.5 text-EN-secondary">
