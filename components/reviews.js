@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { client, urlFor } from "../sanity";
+import PortableText from "react-portable-text";
 
 export const Reviews = ({ reviews }) => {
   return (
@@ -31,7 +32,38 @@ export const Reviews = ({ reviews }) => {
                     <p className="mt-1 text-xs font-medium text-gray-500">
                       {item.company}
                     </p>
-                    <p className="mt-4 text-sm text-gray-500">{item.body}</p>
+                    <PortableText
+                      dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+                      projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                      content={item.body}
+                      serializers={{
+                        h1: (props) => (
+                          <h1 className="text-2xl font-bold">
+                            {props.children}
+                          </h1>
+                        ),
+                        h2: (props) => (
+                          <h2 className="text-xl font-bold">
+                            {props.children}
+                          </h2>
+                        ),
+                        h3: (props) => (
+                          <h3 className="text-lg font-bold">
+                            {props.children}
+                          </h3>
+                        ),
+                        li: (props) => (
+                          <li className="leading-relaxed mb-4">
+                            {props.children}
+                          </li>
+                        ),
+                        link: (href, children) => (
+                          <a href={href} className="text-EN-darkblue">
+                            {children}
+                          </a>
+                        ),
+                      }}
+                    />
 
                     {/* Stars */}
                     <div className="mt-8 flex justify-center gap-0.5 text-EN-secondary">
