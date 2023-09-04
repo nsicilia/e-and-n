@@ -28,7 +28,7 @@ export default function Home({ data, reviews, products }) {
         <p>Copyright © {new Date().getFullYear()} E&N Contracting Group</p>
 
         <a
-          href="https://purplelanterndesign.com"
+          href="https://nickcancode.com"
           target="_blank"
           rel="noopener noreferrer"
         >
