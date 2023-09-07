@@ -32,7 +32,7 @@ export default function Home({ data, reviews, products }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Build by{"  "}
+          Built by{"  "}
           <span className={styles.logo}>
             <Image
               src="/PL_Logo.svg"
